@@ -31,4 +31,74 @@
 
 ### データベース設計
 
-### ローカルでの動作方法
+
+## users テーブル
+
+| Column              | Type    | Options                |
+| ------------------- | ------- | ---------------------- |
+| name                | string  | null: false            |
+| email               | string  | null: false,unique:true|
+| encrypted_password  | string  | null: false            |
+
+### Association
+
+has_many : tweets
+has_one  : shift
+has_many : goals
+
+## tweet テーブル
+
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| title               | string     | null: false                    |
+| context             | text       | null: false                    |
+| user                | references | null: false, foreign_key: true |
+
+
+
+### Association
+
+belongs_to :user
+has_many :count
+
+## count テーブル
+
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| like_count          | string     |                                |
+| tweet               | references | null: false, foreign_key: true |
+| user                | references | null: false, foreign_key: true |
+
+### Association
+
+belongs_to : tweet
+belongs_to : user
+
+
+## shift テーブル
+
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| day                    | string     |                                |
+| shift_in               | string     |                                |
+| shift_out              | string     |                                |
+| user                   | references | null: false, foreign_key: true |
+
+### Association
+
+belongs_to : user
+
+
+## goal テーブル
+
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| month                  | integer    | null: false                    |
+| earning                | integer    | null: false                    |
+| labor_cost             | integer    | null: false                    |
+| user                   | references | null: false, foreign_key: true |
+
+### Association
+
+belongs_to : user
+
