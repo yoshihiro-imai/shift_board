@@ -62,10 +62,10 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: black;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px black solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -76,9 +76,13 @@ a {
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 16px;
+  font-size: 0.8em;
+  color: black;
   text-decoration: none;
   user-select: none;
+  border: 1px black solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
 }
 .nav__logout:hover{
   opacity: 0.5;
@@ -150,6 +154,7 @@ body {
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 body {
+	height:100%;
 	width: 100%;
 }
 #header_inner,.main_contact,#section02_inner,#company {
@@ -299,7 +304,7 @@ nav {
 	margin-bottom: 100px;
 }
 .contents {
-	height: 400px;
+	height:87vh;
 	overflow: hidden;
 }
 .left {
@@ -387,14 +392,16 @@ h4 {
 	color: #fff;
 	font-size: 1.3rem;
 }
-footer {
-	height: 93px;
-	background-color: #aaa;
+.footer {
+	height: 30px;
+	width: 100%;
+  background-color: #999;
+  padding: 10px 0;
 }
-footer p {
-	margin-left: 119px;
-	font-size: 0.75rem;
-	line-height: 93px;
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
 }
 
 .comment_top{
@@ -434,4 +441,55 @@ h5:after {
 .comment_main,.comment_sub{
   line-height: 1.5;
   padding: 0.5em 0;
+}
+
+.form__text {
+	width: 50%;
+	padding: 10px;
+}
+
+.field{
+  margin: 10px
+}
+
+.btn_square {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: gray;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+	border-radius: 3px;
+	margin: 10px;
+}
+.btn_square:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+
+.login{
+	margin: 10px;
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+.login:before, .login:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: black;
+}
+
+.login:before {
+  left:0;
+}
+.login:after {
+  right: 0;
 }
