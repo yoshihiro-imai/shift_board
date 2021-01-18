@@ -6,7 +6,7 @@
 
       <div class="field">
         <%= f.label "名前" %><br />
-        <%= f.text_field :name, autofocus: true, maxlength: "6" ,class: :form__text%>
+        <%= f.text_field :name, autofocus: true,class: :form__text%>
       </div>
 
       <div class="field">
@@ -23,7 +23,7 @@
       </div>
 
       <div class="field">
-        <%= f.label  "パスワード再入力" %><br />
+        <%= f.label  "パスワード(確認用)" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" ,class: :form__text%>
       </div>
 

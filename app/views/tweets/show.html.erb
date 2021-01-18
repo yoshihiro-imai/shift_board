@@ -1,0 +1,34 @@
+<div class="contents row">
+  <div class="container">
+  <h3>お知らせ</h3>
+  <div class="container" ><%= @tweet.title%>
+  </div>
+    <div class="container"><%= safe_join(@tweet.context.split("\n"),tag(:br))%>
+      </div> 
+    <span class="name">
+        <span>投稿者：</span><%= @tweet.user.name %>
+    </span>
+
+    <div>確認数：<%= @tweet.likes.count%></div>
+    <%if current_user.already_liked?(@tweet)%>
+  <%= button_to '取り消す', tweet_like_path(@tweet.id), method: :delete %>
+    <%else%>
+      <%= button_to '確認しました', tweet_likes_path(@tweet.id)%>
+    <%end%>
+
+    <div>〜確認済みの人〜</div>
+    <% @tweet.liked_users.each do |user|%>
+   <li><%= user.name %></li>
+   <%end%>
+
+    <div class="show">
+    <% if user_signed_in? && current_user.id == @tweet.user.id %>
+    <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get, class: "tweet-btn" %>
+    <%= link_to '削除', tweet_path(@tweet.id), method: :delete, class:'tweet-destroy' %>
+    <%end%>
+    
+
+
+    </div>
+</div>
+</div>
