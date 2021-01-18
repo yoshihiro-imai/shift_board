@@ -9,7 +9,7 @@
 				<nav>
 					<ul id="main_nav">
 						<li><a href="#">シフト表<br>閲覧</a></li>
-						<li><a href="#">掲示板<br>投稿</a></li>
+						<li><%= link_to "掲示板投稿", new_tweet_path %></li>
 						<li><a href="#">シフト<br>提出</a></li>
 					</ul>
 				</nav>
@@ -17,10 +17,12 @@
 		</main>
 
 <div class="comment_top">
-    <div class="h5">〜お知らせ〜</div>
-      <ul class="comment_main">
-      <li class="comment_sub">ここに投稿データーを載せる</li>
-      <li class="comment_sub">ここに投稿データーを載せる</li>
-      <li class="comment_sub">ここに投稿データーを載せる</li>
+    <div class="title">〜お知らせ〜</div>
+	 <% @tweet.each do |tweet|%>
+	<%= link_to tweet_path(tweet.id) do %>
+	   <ul class="comment_main">
+         ・<%= tweet.title%>
     </ul>
+		<%end%>
+	 <%end%>
 </div>
