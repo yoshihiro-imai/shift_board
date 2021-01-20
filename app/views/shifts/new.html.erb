@@ -1,0 +1,31 @@
+
+
+<%= form_with model: @shifts, url: shifts_path, local: true do |form| %>
+  
+     
+  <% @shifts.collection.each do |shift|%>
+    <%= fields_for 'shifts[]', shift do |field| %>
+      <div class="field">
+        <%= field.label :日にち %>
+        <%= field.date_field :date %>
+      </div>
+
+      <div class="field">
+        <%= field.label :入り時間 %>
+        <%= field.text_field :shift_in %>
+      </div>
+
+      <div class="field">
+        <%= field.label :終了時間 %>
+        <%= field.text_field :shift_out %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', root_path %>
