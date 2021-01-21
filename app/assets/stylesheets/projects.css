@@ -1,5 +1,5 @@
 .nickname1{
-  width: 30%;
+  width: 10%;
   margin: 15px;
   padding: 10px;
   border: 1px solid #D8D8D8;
@@ -19,6 +19,24 @@
 .add1{
   margin: 15px;
   font-family: "游ゴシック", "YuGothic";
-
-
 }
+
+.title2{
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+  font-size: 20px;
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: transparent;/*背景透明に*/
+}
+
+
+ .btn5{
+  margin: 10px;
+  padding: 10px;
+  font-family: "游ゴシック", "YuGothic";
+  border-radius: 20px;
+  border: 0;
+}
+

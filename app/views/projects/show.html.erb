@@ -1,13 +1,15 @@
+    <div class="title2">  <%= "#{@project.month}月のシフト表"%></div>
 
 <p>
-  <strong>名前:</strong>
-  <%= @project.nickname %>
+  <%= "名前：#{current_user.name}" %>
+
+
 </p>
 <div class=  "Tasks">
 <ul>
   <% @project.tasks.each do |task|%>
   <div class= "task">
-    <li ><%= task.date%> </li>:
+    <li ><%= task.date%> </li>日:
     <li ><%= task.intime%> </li>時〜
     <li ><%= task.outtime%> </li>時
   </div>

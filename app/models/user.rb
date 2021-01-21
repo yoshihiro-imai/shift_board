@@ -8,7 +8,7 @@ class User < ApplicationRecord
    has_many :tweets, dependent: :destroy
    has_many :likes, dependent: :destroy
    has_many :likes_posts, through: :like, source: :post
-   has_many :shifts, dependent: :destroy
+   has_many :projects, dependent: :destroy
 
    def already_liked?(tweet)
     self.likes.exists?(tweet_id: tweet.id)  

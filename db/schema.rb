@@ -22,13 +22,15 @@ ActiveRecord::Schema.define(version: 2021_01_21_033330) do
   end
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
+    t.integer "month", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "date", null: false
+    t.integer "date", null: false
     t.integer "intime", null: false
     t.integer "outtime", null: false
     t.bigint "project_id"
@@ -62,5 +64,6 @@ ActiveRecord::Schema.define(version: 2021_01_21_033330) do
 
   add_foreign_key "likes", "tweets"
   add_foreign_key "likes", "users"
+  add_foreign_key "projects", "users"
   add_foreign_key "tweets", "users"
 end

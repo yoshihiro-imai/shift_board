@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]  
+
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
@@ -68,6 +70,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:nickname, tasks_attributes: [:id, :date, :intime, :outtime,:_destroy])
+      params.require(:project).permit(:month, tasks_attributes: [:id, :date, :intime, :outtime,:_destroy]).merge(user_id: current_user.id)
     end
 end

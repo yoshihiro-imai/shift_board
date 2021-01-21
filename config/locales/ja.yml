@@ -6,3 +6,10 @@ ja:
      tweet:
        title: タイトル
        context: 本文
+     project:
+       month: 月
+     tasks:
+       date: 日にち
+       intime: 入り時間
+       outtime: 終了時間
+      
