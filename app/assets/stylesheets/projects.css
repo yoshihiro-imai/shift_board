@@ -1,0 +1,24 @@
+.nickname1{
+  width: 30%;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+.fields{
+  display: flex;
+  margin: 15px;
+}
+
+.delete1{
+  margin: 15px;
+}
+
+.add1{
+  margin: 15px;
+  font-family: "游ゴシック", "YuGothic";
+
+
+}

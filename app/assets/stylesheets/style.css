@@ -699,3 +699,7 @@ form input[type="submit"]:hover {
   
 	margin: 30px;
 }
+
+.task{
+  display: flex;
+}

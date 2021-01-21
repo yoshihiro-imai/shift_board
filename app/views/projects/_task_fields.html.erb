@@ -1,0 +1,11 @@
+<div class = "nested-fields">
+    <div class="fields">
+  <strong>日:</strong>
+    <%= f.date_field :date ,class:"nickname1" %>
+  <strong>IN:</strong>
+    <%= f.text_field :intime ,class:"nickname1" %>
+  <strong>OUT:</strong>
+    <%= f.text_field :outtime ,class:"nickname1" %>
+  </div>
+
+  <%= link_to_remove_association "削除", f ,class:"delete1"%>
