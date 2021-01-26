@@ -7,11 +7,15 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    @protest = Project.joins(:tasks).select('projects.*, tasks.*')
+    @tasks = Task.all
+
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @protest = Project.joins(:tasks).select('projects.*, tasks.intime,tasks.outtime').where(tasks:{date:1})
   end
 
   # GET /projects/new
@@ -26,6 +30,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
+
     @project = Project.new(project_params)
     respond_to do |format|
       if @project.save
@@ -68,8 +73,8 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Only allow a list of tr"usted parameters through.
     def project_params
-      params.require(:project).permit(:month, tasks_attributes: [:id, :date, :intime, :outtime,:_destroy]).merge(user_id: current_user.id)
+      params.require(:project).permit(:nickname, tasks_attributes: [:id, :start_time, :intime, :outtime,:_destroy]).merge(user_id: current_user.id)
     end
 end

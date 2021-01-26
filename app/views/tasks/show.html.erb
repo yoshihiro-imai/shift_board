@@ -1,24 +1,14 @@
-<p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <th>日にち</th>
+    <th>IN-OUT</th>
+  </tr>
+<% @protest.each do |task|%>
+  <tr>
+    <td><%="#{task.start_time.day}"%></td>
+    <td><%= "#{task.intime}時〜#{task.outtime}時"%></td>
+  </tr>  
+ <%end %> 
 
-<p>
-  <strong>Date:</strong>
-  <%= @task.date %>
-</p>
 
-<p>
-  <strong>Intime:</strong>
-  <%= @task.intime %>
-</p>
-
-<p>
-  <strong>Outtime:</strong>
-  <%= @task.outtime %>
-</p>
-
-<p>
-  <strong>Project:</strong>
-  <%= @task.project_id %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+</table>

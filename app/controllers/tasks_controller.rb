@@ -1,15 +1,21 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+ # before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @protest = Project.joins(:tasks).select('projects.*, tasks.*')
+    @protest2 = Project.joins(:tasks).select('
+tasks.start_time')
+
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @protest = Project.joins(:tasks).select('projects.*, tasks.*')
+
+
   end
 
   # GET /tasks/new
@@ -69,6 +75,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:date, :intime, :outtime, :project_id)
+      params.require(:task).permit(:start_time, :intime, :outtime, :project_id)
     end
 end

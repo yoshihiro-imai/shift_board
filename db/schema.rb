@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_033330) do
   end
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "month", null: false
+    t.string "nickname", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_033330) do
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "date", null: false
+    t.datetime "start_time"
     t.integer "intime", null: false
     t.integer "outtime", null: false
     t.bigint "project_id"

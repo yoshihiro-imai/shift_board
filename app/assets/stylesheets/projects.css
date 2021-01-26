@@ -1,5 +1,13 @@
 .nickname1{
-  width: 10%;
+  width: 25%;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+.nickname2{
+  width: 30%;
   margin: 15px;
   padding: 10px;
   border: 1px solid #D8D8D8;

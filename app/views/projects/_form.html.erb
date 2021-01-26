@@ -10,12 +10,11 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-  <strong>月:</strong>
-    <%= f.number_field :month ,class:"nickname1" %>
+  <strong>名前:</strong>
+    <%= f.text_field :nickname ,class:"nickname2" %>
   </div>
-
+  
     <div class =  "Tasks">
       <div id="tasks.field">
    <%= f.fields_for :tasks do |task| %>
