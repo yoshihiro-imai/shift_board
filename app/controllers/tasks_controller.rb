@@ -10,8 +10,10 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
-    @protest = Project.joins(:tasks).select('projects.*, tasks.*')
-    @task = @protest.where(tasks:{start_time:params[:id]})
+    @project = Project.joins(:tasks).select('projects.*, tasks.*')
+    @task = @project.where(tasks:{start_time:params[:id]})
+    
+
   end
 
 

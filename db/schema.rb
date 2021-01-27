@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2021_01_21_033330) do
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start_time"
-    t.integer "intime", null: false
-    t.integer "outtime", null: false
+    t.time "intime", null: false
+    t.time "outtime", null: false
     t.bigint "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
