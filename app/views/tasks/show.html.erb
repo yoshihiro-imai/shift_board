@@ -1,14 +1,22 @@
 <table>
   <tr>
+      <th>名前</th>
+
     <th>日にち</th>
     <th>IN-OUT</th>
+
   </tr>
-<% @protest.each do |task|%>
+
+<% @task.each do |task|%>
   <tr>
-    <td><%="#{task.start_time.day}"%></td>
+      <td><%="#{task.nickname}"%></td>
+
+    <td><%="#{task.start_time.month}月#{task.start_time.day}日"%></td>
     <td><%= "#{task.intime}時〜#{task.outtime}時"%></td>
   </tr>  
  <%end %> 
+
+
 
 
 </table>

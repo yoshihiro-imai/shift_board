@@ -19,27 +19,6 @@
     <% end %>
   </tbody>
 </table>
-<table>
-
-  <tr >
-      <th>日にち</th>
-
-      <th>名前</th>
-    <th>IN：OUT</th>
-
-  </tr>
-  <% @protest.each do |test|%>
-  <tr>
-       <td><%="#{test.start_time.day}日"%></td>
-     <td><%=test.nickname%></td>
-        <td><%="#{test.intime}時〜#{test.outtime}時"%></td>
-
-  </tr>  
-  <%end%>
-
-</table>
-
-
 
 
 <%= link_to 'シフトを登録', new_project_path ,class:"btn4"%>

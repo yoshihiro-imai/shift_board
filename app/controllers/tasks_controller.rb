@@ -5,18 +5,15 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @protest = Project.joins(:tasks).select('projects.*, tasks.*')
-    @protest2 = Project.joins(:tasks).select('
-tasks.start_time')
-
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
     @protest = Project.joins(:tasks).select('projects.*, tasks.*')
-
-
+    @task = @protest.where(tasks:{start_time:params[:id]})
   end
+
 
   # GET /tasks/new
   def new
@@ -25,6 +22,7 @@ tasks.start_time')
 
   # GET /tasks/1/edit
   def edit
+  
   end
 
   # POST /tasks

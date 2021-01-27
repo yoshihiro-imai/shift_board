@@ -6,10 +6,11 @@
 <body>
 
 <%= month_calendar events: @protest do |date, tasks| %>
-<%= link_to "#{date.day}日", task_path(@protest2)%>
+<%="#{date.day}日"%>
   <% tasks.each do |task| %>
     <div>
-    <%="・#{task.nickname} #{task.intime}時~#{task.outtime}時"%>
+    <%=link_to"・#{task.nickname} #{task.intime}時~#{task.outtime}時",task_path(task.start_time)%>
+
     </div>
   <% end %>
 
