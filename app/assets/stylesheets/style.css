@@ -24,7 +24,6 @@ div {
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
-  background-color:#fffff9;
 }
 
 li {
@@ -55,6 +54,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 .logo {
   width: 100px;
@@ -77,13 +77,13 @@ a {
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  font-size: 0.9em;
   color: black;
   text-decoration: none;
   user-select: none;
-  border: 1px black solid;
   border-radius: 3px;
   transition: 0.4s ease;
+  font-family:Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
 }
 .nav__logout:hover{
   opacity: 0.5;
@@ -214,10 +214,11 @@ body {
 	width: 100%;
 	height: 482px;
 	position: relative;
-  background-image: url("/images/image3.jpg");
+  background-image: url("/images/1.jpg");
 	background-size:cover;
 }
 h1 {
+  font-family:YuGothic,'Yu Gothic',sans-serif;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -226,8 +227,8 @@ h1 {
 	width: 500px;
 	height: 85px;
 	margin: auto;
-	color: #ccc;
-	font-size: 4.3rem;
+	color:white;
+	font-size: 6.3rem;
 	text-align: center;
 	display: table-cell;
 	vertical-align: middle;
@@ -425,6 +426,15 @@ h4 {
   height: 2px;
 
 }
+.title3{
+  text-align: center;
+
+justify-content: center;
+  color:#0d0015	;
+  font-size: 30px;
+  font-family:YuGothic,'Yu Gothic',sans-serif;
+
+}
 
 .title:before {
   left:0;
@@ -433,7 +443,7 @@ h4 {
   right: 0;
 }
 .comment_main {
-  background: #dadada;/*灰色に*/
+  background:#f8f4e6;
   border-radius :8px;
   box-shadow :0px 0px 5px silver;
   padding: 0.5em 0.5em 0.5em 2em;

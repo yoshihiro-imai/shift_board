@@ -1,31 +1,24 @@
 <div id="main_image">
  <div id="main_image_inner">
-     <h1>SHIFTBOARD</h1>
+     <h1>ShiftBoard</h1>
+     
 
 
 
  </div>
 		</div>
-		<main>
-			<section id="section01">
-			
-				<nav>
-					<ul id="main_nav">
-						<li><%= link_to "シフト閲覧", tasks_path %></li>
-						<li><%= link_to "掲示板投稿", new_tweet_path %></li>
-						<li><%= link_to "シフト提出", new_project_path %></li>
-					</ul>
-				</nav>
-			</section>
-		</main>
+
 
 <div class="comment_top">
-    <div class="title">〜お知らせ〜</div> 
+    <div class="title3">~お知らせ~</div> 
 	 <% @tweet.each do |tweet|%>
 	<%= link_to tweet_path(tweet.id) do %>
 	   <ul class="comment_main">
          ・<%= tweet.title%>
+				 
     </ul>
 		<%end%>
 	 <%end%>
+	 	 <%= paginate @tweet %>
+
 </div>
