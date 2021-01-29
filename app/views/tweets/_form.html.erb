@@ -1,5 +1,6 @@
 <%= form_with(model: tweet, local: true) do |form| %>
   <%= form.text_field :title, placeholder: "タイトルを記入してください" %>
+   <%= form.file_field :image, placeholder: "画像の投稿" %>
   <%= form.text_area :context, placeholder: "本文を入力してください", rows: "10" %>
   <div class = center-btn> <%= form.submit "投稿する" %></div>
 <% end %>

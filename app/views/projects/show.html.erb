@@ -1,4 +1,4 @@
-    <div class="title2">  <%= "#シフト表"%></div>
+    <div class="title2">  <%= "シフト表"%></div>
 
 <p>
   <%= "名前：#{@project.nickname}" %>
@@ -11,7 +11,7 @@
   </tr>
 <% @project.tasks.each do |task|%>
   <tr>
-    <td><%="#{task.start_time.day}"%></td>
+    <td><%="#{task.start_time.month}月#{task.start_time.day}日"%></td>
     <td><%= "#{task.intime.strftime('%H:%M')}〜#{task.outtime.strftime('%H:%M')}"%></td>
   </tr>  
  <% end %> 
@@ -20,5 +20,5 @@
 
 
 
-<%= link_to 'Edit', edit_project_path(@project) %> 
-<%= link_to 'Back', projects_path %>
+<%= link_to '編集', edit_project_path(@project) %> 
+<%= link_to 'シフト一覧', projects_path %>

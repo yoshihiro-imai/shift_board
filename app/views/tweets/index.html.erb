@@ -1,6 +1,5 @@
 <div id="main_image">
  <div id="main_image_inner">
-     <h1>ShiftBoard</h1>
      
 
 
@@ -9,16 +8,36 @@
 		</div>
 
 
-<div class="comment_top">
-    <div class="title3">~お知らせ~</div> 
-	 <% @tweet.each do |tweet|%>
-	<%= link_to tweet_path(tweet.id) do %>
-	   <ul class="comment_main">
-         ・<%= tweet.title%>
-				 
-    </ul>
-		<%end%>
+  <div class='item-contents'>
+    <h3 class='title10'>掲示板</h3>
+
+<ul class='item-lists'>
+ <% @tweet.each do |tweet|%>
+   <%= link_to tweet_path(tweet.id) do %>
+	     <% if tweet.image.present?%>
+   <li class='list'>
+	   <div class='item-img-content'>
+	     <%=  image_tag tweet.image ,class: "item-img" if tweet.image.attached?  %>
+			 <%else%>
+			    <li class='list'>
+	   <div class='item-img-content'>
+
+	     <%= image_tag "/assets/6.png"  ,class:"item-img" %>
+	     <% end %>
+     </div>
+	    <div class='item-info'>
+        <h5 class='item-name'>
+         <%= tweet.title%> 
+    	  </h5>    
+				<h5 class='item-name'>
+	      <%= image_tag"good.png" ,class:"logo-img"%> <%="#{tweet.likes.count}"%> 
+    	  </h5>    
+	    </div>   
+    </li>
 	 <%end%>
+ <%end%> 
+</ul>
+
 	 	 <%= paginate @tweet %>
 
 </div>

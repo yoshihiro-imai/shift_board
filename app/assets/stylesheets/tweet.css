@@ -1,0 +1,94 @@
+
+.item-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.item-contents>.title {
+  font-size: 4vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.item-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: #3ccace;
+  font-weight: bold;
+}
+
+.item-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:10px;
+}
+
+.item-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color:black;
+}
+
+
+.item-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 30vh;
+  height: 30vh;
+  margin: 20px;
+}
+
+
+.item-info {
+  width: 30vh;
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+  word-wrap: break-word;
+
+
+}
+
+.item-name {
+  font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
+  font-size: 14px;
+
+}
+
+.item-price {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.star-btn {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+}
+
+.star-count {
+  font-size: 2vh;
+}
+.title10{
+  font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
+}
+
+.logo-img{
+  width: 3vh;
+  height: 3vh;
+}

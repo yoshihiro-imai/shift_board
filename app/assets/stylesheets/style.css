@@ -1,9 +1,4 @@
 
-.main-container {
-  height: 100vh;
-  background-size: cover;
-}
-
 /* リセットCSS */
 * {
   box-sizing: border-box;
@@ -91,13 +86,6 @@ a {
 
 
 
-/* トップページ */
-.main{
-  border-radius: 5px; border: 1px dashed #ffb6c1;font-size: 100%; padding: 20px;
-}
-
-
-
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
@@ -166,44 +154,9 @@ body {
 	height: 85px;
 	position: relative;
 }
-#header_logo,#header_contact,#header_text {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-}
-#header_logo {
-	width: 194px;
-	height: 40px;
-	left: 19px;
-}
-#header_contact {
-	width: 155px;
-	height: 51px;
-	right: 0;}
-#header_contact_inner {
-	display: block;
-	width: 102px;
-	height: 24px;
-	text-align: center;
-	padding: 14px 26px 13px 27px;
-	background-color: #ff0600;
-	transition: 0.4s;
-}
-#header_contact_inner:hover {
-	transform: scale(1.1,1.1);
-}
-#header_contact_inner p {
-	color: #fff;
-}
-#header_text {
-	width: 243px;
-	height: 29px;
-	right: 155px;
-}
-#header_text p {
-	font-size: 0.9rem;
-}
+
+
+
 #main_image {
 	display: table;
 	width: 100%;
@@ -214,7 +167,7 @@ body {
 	width: 100%;
 	height: 482px;
 	position: relative;
-  background-image: url("/images/1.jpg");
+  background-image: url("/images/13.png");
 	background-size:cover;
 }
 h1 {
@@ -313,10 +266,7 @@ nav {
 #div03 {
 	margin-bottom: 100px;
 }
-.contents {
-	height:100vh;
-	overflow: hidden;
-}
+
 .left {
 	float: left;
 	height: 400px;
@@ -331,7 +281,7 @@ nav {
 	height: 400px;
 }
 .text {
-	background-color: #aaa;
+	background-color:black;
 }
 .contents p,h4 {
 	margin: 30px 120px 0 21px;

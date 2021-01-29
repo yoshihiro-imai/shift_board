@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
 
 
   def  index
-    @tweet = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @tweet = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(6)
 
   end
 
@@ -47,7 +47,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet).permit(:title,:context).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:title,:context,:image).merge(user_id: current_user.id)
   end
 
 
