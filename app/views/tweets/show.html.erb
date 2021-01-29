@@ -18,7 +18,7 @@
     <%if current_user.already_liked?(@tweet)%>
   <%= button_to '取り消す', tweet_like_path(@tweet.id), method: :delete %>
     <%else%>
-      <%= button_to '確認しました', tweet_likes_path(@tweet.id)%>
+      <%= button_to '#{image_tag"good.png"} ', tweet_likes_path(@tweet.id)%>
     <%end%>
 
     <div>〜確認済みの人〜</div>
