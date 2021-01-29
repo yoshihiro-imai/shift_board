@@ -92,3 +92,36 @@
   width: 3vh;
   height: 3vh;
 }
+
+.logo-image{
+  background-image: url("/images/good.png");
+  width: 5vh;
+  height: 5vh;
+}
+.logo-image2{
+  background-image: url("/images/good2.png");
+  width: 5vh;
+  height: 5vh;
+}
+.balloon{
+  position: relative;
+  padding: 20px;
+  background-color: #eaf4fc;
+  margin-bottom: 2em;
+}
+/* 色付きの半円 */
+.balloon::before{
+
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-right: 15px solid  transparent;
+  border-bottom: 15px solid #eaf4fc;
+  border-left: 15px solid transparent;
+
+}
+

@@ -170,6 +170,8 @@ body {
   background-image: url("/images/13.png");
 	background-size:cover;
 }
+
+
 h1 {
   font-family:YuGothic,'Yu Gothic',sans-serif;
 	position: absolute;
@@ -614,14 +616,15 @@ form textarea {
   padding: 10px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
-  font-family: "游ゴシック", "YuGothic";
 }
 
 .center-btn{
+  width: 50%;
 	text-align: center;
 }
+input[type="submit"] ・
 
-form input[type="submit"] {
+{
   margin: auto;
 	width: 30%;
   background-color:gray;
@@ -630,8 +633,8 @@ form input[type="submit"] {
   border: 0;
   font-size: 14px;
 }
-
-form input[type="submit"]:hover {
+input[type="submit"]:hover・
+ {
   background-color:black;
 }
 

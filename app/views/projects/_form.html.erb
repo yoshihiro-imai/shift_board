@@ -21,13 +21,13 @@
       <%= render 'task_fields', f: task%>
       <%end%>
       <div id="tasks.field">
-      <%= link_to_add_association '追加', f, :tasks,class:"add1"%>
+      <%= link_to_add_association '➕フォーム追加', f, :tasks,class:"add1"%>
      </div>
      </div>
      </div>
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn10" %>
   </div>
 <% end %>

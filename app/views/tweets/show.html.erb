@@ -13,20 +13,20 @@
         <span>投稿者：</span><%= @tweet.user.name %>
     </span>
 
-    <div>      <%= image_tag"good.png" ,class:"logo-img"%> 
-<%= @tweet.likes.count%></div>
+    <div>      
     <%if current_user.already_liked?(@tweet)%>
-  <%= button_to '取り消す', tweet_like_path(@tweet.id), method: :delete %>
+  <%= button_to '', tweet_like_path(@tweet.id), method: :delete,class:"logo-image2" %>
     <%else%>
-      <%= button_to '#{image_tag"good.png"} ', tweet_likes_path(@tweet.id)%>
+      <%= button_to '', tweet_likes_path(@tweet.id) ,class:"logo-image"%>
     <%end%>
 
-    <div>〜確認済みの人〜</div>
+
+    <div class="balloon">
     <% @tweet.liked_users.each do |user|%>
    <li><%= user.name %></li>
    <%end%>
-   
-
+   </div>
+ 
     <div class="show">
     <% if user_signed_in? && current_user.id == @tweet.user.id %>
     <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get, class: "tweet-btn" %>

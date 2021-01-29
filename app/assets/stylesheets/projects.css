@@ -25,8 +25,29 @@
 }
 
 .add1{
-  margin: 15px;
-  font-family: "游ゴシック", "YuGothic";
+  font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0;
+  text-decoration: none;
+  margin: 20px;
+}
+.add1:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  top:100%;
+  left: 0;
+  border-radius: 3px;
+  transition: .2s;
+}
+
+.add1:before {
+  top: -webkit-calc(100% - 3px);
+  top: calc(100% - 3px);
 }
 
 .title2{
@@ -46,5 +67,10 @@
   font-family: "游ゴシック", "YuGothic";
   border-radius: 20px;
   border: 0;
+}
+
+.btn10{
+  width: 30%;
+  margin: 15px;
 }
 
