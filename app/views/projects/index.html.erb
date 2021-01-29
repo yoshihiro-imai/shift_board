@@ -1,0 +1,25 @@
+
+<table>
+  <thead>
+    
+  <%= "シフト一覧"%>
+    
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%=project.nickname %></td>  
+           <% if user_signed_in? && current_user.id == project.user.id %>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'シフトを登録', new_project_path ,class:"btn4"%>
+

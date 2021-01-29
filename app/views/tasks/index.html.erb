@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>シフト</title>
+</head>
+<body>
+
+<%= month_calendar events: @protest do |date, tasks| %>
+<%="#{date.day}日"%>
+  <% tasks.each do |task| %>
+    <div>
+    <%=link_to"・#{task.nickname} #{task.intime.strftime('%H:%M')}~#{task.outtime.strftime('%H:%M')}",task_path(task.start_time)%>
+
+    </div>
+  <% end %>
+
+<% end %>
+
+</body>
+</html>

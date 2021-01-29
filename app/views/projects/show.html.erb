@@ -1,0 +1,24 @@
+    <div class="title2">  <%= "シフト表"%></div>
+
+<p>
+  <%= "名前：#{@project.nickname}" %>
+</p>
+
+<table>
+  <tr>
+    <th>日にち</th>
+    <th>IN-OUT</th>
+  </tr>
+<% @project.tasks.each do |task|%>
+  <tr>
+    <td><%="#{task.start_time.month}月#{task.start_time.day}日"%></td>
+    <td><%= "#{task.intime.strftime('%H:%M')}〜#{task.outtime.strftime('%H:%M')}"%></td>
+  </tr>  
+ <% end %> 
+
+</table>
+
+
+
+<%= link_to '編集', edit_project_path(@project) %> 
+<%= link_to 'シフト一覧', projects_path %>

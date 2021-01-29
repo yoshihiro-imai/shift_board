@@ -1,0 +1,25 @@
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
+<table>
+  <tr>
+  <th>名前</th>
+  <th>日にち</th>
+  <th>IN-OUT</th>
+  </tr>
+<% @task.each do |task|%>
+  <tr>
+      <td><%="#{task.nickname}"%></td>
+
+    <td><%="#{task.start_time.month}月#{task.start_time.day}日"%></td>
+    <td><%= "#{task.intime.strftime('%H:%M')}〜#{task.outtime.strftime('%H:%M')}"%></td>
+  </tr>  
+ <%end %> 
+</table>
+ <%@task.each do |task|%>
+<%=timeline [
+  ["#{task.nickname}",
+   "#{task.start_time.year}-#{task.start_time.month}-#{task.start_time.day} #{task.intime.strftime('%H:%M')}",
+    "#{task.start_time.year}-#{task.start_time.month}-#{task.start_time.day} #{task.outtime.strftime('%H:%M')}" ]
+]   %>
+ <%end%>
+  

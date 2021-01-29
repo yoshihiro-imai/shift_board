@@ -1,0 +1,33 @@
+<%= form_with(model: project, local: true) do |f| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+  <strong>名前:</strong>
+    <%= f.text_field :nickname ,class:"nickname2" %>
+  </div>
+  
+    <div class =  "Tasks">
+      <div id="tasks.field">
+   <%= f.fields_for :tasks do |task| %>
+      <%= render 'task_fields', f: task%>
+      <%end%>
+      <div id="tasks.field">
+      <%= link_to_add_association '追加', f, :tasks,class:"add1"%>
+     </div>
+     </div>
+     </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

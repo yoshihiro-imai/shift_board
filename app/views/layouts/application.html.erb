@@ -5,9 +5,12 @@
     <title>Shift Board</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   </head>
 
   <body>
@@ -15,10 +18,13 @@
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <%= link_to image_tag("logo.png"), root_path %>
+            <%= link_to image_tag("1.png"), root_path %>
           </div>
           <% if  user_signed_in? %>
              <div class="nav__right"> 
+              <%= link_to "シフト閲覧",tasks_path, class: :nav__logout %>
+              <%= link_to "シフト投稿",new_project_path, class: :nav__logout %>
+              <%= link_to "掲示板投稿",new_tweet_path, class: :nav__logout %>
                <%= link_to "ログアウト",destroy_user_session_path,method: :delete, class: :nav__logout %>
              </div> 
           <% else %>

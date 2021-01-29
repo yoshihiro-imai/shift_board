@@ -3,23 +3,29 @@
   <h3>お知らせ</h3>
   <div class="container" ><%= @tweet.title%>
   </div>
+  <% if  @tweet.image.present?%>
+   <div class="container" ><%= image_tag @tweet.image if @tweet.image.attached?%>
+  </div>
+  <% end %>
     <div class="container"><%= safe_join(@tweet.context.split("\n"),tag(:br))%>
       </div> 
     <span class="name">
         <span>投稿者：</span><%= @tweet.user.name %>
     </span>
 
-    <div>確認数：<%= @tweet.likes.count%></div>
+    <div>      <%= image_tag"good.png" ,class:"logo-img"%> 
+<%= @tweet.likes.count%></div>
     <%if current_user.already_liked?(@tweet)%>
   <%= button_to '取り消す', tweet_like_path(@tweet.id), method: :delete %>
     <%else%>
-      <%= button_to '確認しました', tweet_likes_path(@tweet.id)%>
+      <%= button_to '#{image_tag"good.png"} ', tweet_likes_path(@tweet.id)%>
     <%end%>
 
     <div>〜確認済みの人〜</div>
     <% @tweet.liked_users.each do |user|%>
    <li><%= user.name %></li>
    <%end%>
+   
 
     <div class="show">
     <% if user_signed_in? && current_user.id == @tweet.user.id %>

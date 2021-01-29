@@ -1,9 +1,4 @@
 
-.main-container {
-  height: 100vh;
-  background-size: cover;
-}
-
 /* リセットCSS */
 * {
   box-sizing: border-box;
@@ -54,6 +49,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 .logo {
   width: 100px;
@@ -76,23 +72,16 @@ a {
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  font-size: 0.9em;
   color: black;
   text-decoration: none;
   user-select: none;
-  border: 1px black solid;
   border-radius: 3px;
   transition: 0.4s ease;
+  font-family:Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
 }
 .nav__logout:hover{
   opacity: 0.5;
-}
-
-
-
-/* トップページ */
-.main{
-  border-radius: 5px; border: 1px dashed #ffb6c1;font-size: 100%; padding: 20px;
 }
 
 
@@ -165,44 +154,9 @@ body {
 	height: 85px;
 	position: relative;
 }
-#header_logo,#header_contact,#header_text {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-}
-#header_logo {
-	width: 194px;
-	height: 40px;
-	left: 19px;
-}
-#header_contact {
-	width: 155px;
-	height: 51px;
-	right: 0;}
-#header_contact_inner {
-	display: block;
-	width: 102px;
-	height: 24px;
-	text-align: center;
-	padding: 14px 26px 13px 27px;
-	background-color: #ff0600;
-	transition: 0.4s;
-}
-#header_contact_inner:hover {
-	transform: scale(1.1,1.1);
-}
-#header_contact_inner p {
-	color: #fff;
-}
-#header_text {
-	width: 243px;
-	height: 29px;
-	right: 155px;
-}
-#header_text p {
-	font-size: 0.9rem;
-}
+
+
+
 #main_image {
 	display: table;
 	width: 100%;
@@ -213,10 +167,11 @@ body {
 	width: 100%;
 	height: 482px;
 	position: relative;
-  background-image: url("/images/image3.jpg");
+  background-image: url("/images/13.png");
 	background-size:cover;
 }
 h1 {
+  font-family:YuGothic,'Yu Gothic',sans-serif;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -225,8 +180,8 @@ h1 {
 	width: 500px;
 	height: 85px;
 	margin: auto;
-	color: #ccc;
-	font-size: 4.3rem;
+	color:white;
+	font-size: 6.3rem;
 	text-align: center;
 	display: table-cell;
 	vertical-align: middle;
@@ -277,9 +232,17 @@ nav {
 	float: left;
 	height: 225px;
 	width: 225px;
-	border: 2px solid #000;
+  border-bottom: solid 3px #bd6565;
 	border-radius: 50%;
-	position: relative;
+  position: relative;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  background:#ebf6f7;
+  transition: .4s;
+  
+
+}
+#main_nav li :hover {
+  background: #bce2e8;
 }
 
 #main_nav li:last-of-type {
@@ -303,10 +266,7 @@ nav {
 #div03 {
 	margin-bottom: 100px;
 }
-.contents {
-	height:100vh;
-	overflow: hidden;
-}
+
 .left {
 	float: left;
 	height: 400px;
@@ -321,7 +281,7 @@ nav {
 	height: 400px;
 }
 .text {
-	background-color: #aaa;
+	background-color:black;
 }
 .contents p,h4 {
 	margin: 30px 120px 0 21px;
@@ -414,8 +374,16 @@ h4 {
   display: inline-block;
   width: 45px;
   height: 2px;
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
+
+}
+.title3{
+  text-align: center;
+
+justify-content: center;
+  color:#0d0015	;
+  font-size: 30px;
+  font-family:YuGothic,'Yu Gothic',sans-serif;
+
 }
 
 .title:before {
@@ -425,7 +393,7 @@ h4 {
   right: 0;
 }
 .comment_main {
-  background: #dadada;/*灰色に*/
+  background:#f8f4e6;
   border-radius :8px;
   box-shadow :0px 0px 5px silver;
   padding: 0.5em 0.5em 0.5em 2em;
@@ -668,11 +636,13 @@ form input[type="submit"]:hover {
 }
 
 .container {
-  margin: 20px 0;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: white;
-  box-sizing: border-box;
+  width: 95%;
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+
+  font-family: "游ゴシック", "YuGothic";
 }
 
 .tweet-btn {
@@ -698,4 +668,8 @@ form input[type="submit"]:hover {
 	text-align: right;
   
 	margin: 30px;
+}
+
+.task{
+  display: flex;
 }
