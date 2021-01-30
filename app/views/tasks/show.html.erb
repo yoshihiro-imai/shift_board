@@ -15,11 +15,5 @@
   </tr>  
  <%end %> 
 </table>
- <%@task.each do |task|%>
-<%=timeline [
-  ["#{task.nickname}",
-   "#{task.start_time.year}-#{task.start_time.month}-#{task.start_time.day} #{task.intime.strftime('%H:%M')}",
-    "#{task.start_time.year}-#{task.start_time.month}-#{task.start_time.day} #{task.outtime.strftime('%H:%M')}" ]
-]   %>
- <%end%>
-  
+ 
+<%=timeline @timeline%>

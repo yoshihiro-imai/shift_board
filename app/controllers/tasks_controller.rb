@@ -10,9 +10,12 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
-    @project = Project.joins(:tasks).select('projects.*, tasks.*')
-    @task = @project.where(tasks:{start_time:params[:id]})
-    
+    @projects = Project.joins(:tasks).select('projects.*, tasks.*')
+    @task = @projects.where(tasks:{start_time:params[:id]})
+    @timeline = @projects.where(tasks:{start_time:params[:id]}) .map do |project|
+    [project.nickname, intime(project),outtime(project)]
+    end
+
 
   end
 
@@ -76,5 +79,13 @@ class TasksController < ApplicationController
     # Only allow a list of trusted parameters through.
     def task_params
       params.require(:task).permit(:start_time, :intime, :outtime, :project_id)
+    end
+
+    def intime(project)
+      "#{project.start_time.year}-#{project.start_time.month}-#{project.start_time.day} #{project.intime.strftime('%H:%M')}"
+    end
+
+    def outtime(project)
+      "#{project.start_time.year}-#{project.start_time.month}-#{project.start_time.day} #{project.outtime.strftime('%H:%M')}"
     end
 end

@@ -23,7 +23,7 @@
 
     <div class="balloon">
     <% @tweet.liked_users.each do |user|%>
-   <li><%= user.name %></li>
+   <li><%="・#{user.name} "%></li>
    <%end%>
    </div>
  
