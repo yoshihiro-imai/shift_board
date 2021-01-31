@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_021119) do
+ActiveRecord::Schema.define(version: 2021_01_31_034641) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -51,13 +51,14 @@ ActiveRecord::Schema.define(version: 2021_01_29_021119) do
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "start_time"
-    t.time "intime", null: false
-    t.time "outtime", null: false
-    t.bigint "project_id"
+    t.datetime "start_time", null: false
+    t.datetime "intime", null: false
+    t.datetime "outtime", null: false
+    t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_id"], name: "index_tasks_on_project_id"
+    t.index ["project_id"], name: "fk_rails_02e851e3b7"
+    t.index ["start_time", "project_id"], name: "index_tasks_on_start_time_and_project_id", unique: true
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,5 +89,6 @@ ActiveRecord::Schema.define(version: 2021_01_29_021119) do
   add_foreign_key "likes", "tweets"
   add_foreign_key "likes", "users"
   add_foreign_key "projects", "users"
+  add_foreign_key "tasks", "projects"
   add_foreign_key "tweets", "users"
 end
