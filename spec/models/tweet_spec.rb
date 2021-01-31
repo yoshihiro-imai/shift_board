@@ -13,7 +13,7 @@ RSpec.describe Tweet, type: :model do
    end    
   end
 
-  context '投稿ができばい場合' do
+  context '投稿ができない場合' do
     it "タイトルが入力されていない場合投稿ができない" do
      @tweet.title = nil
      @tweet.valid?

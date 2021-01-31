@@ -104,6 +104,7 @@
   height: 5vh;
 }
 .balloon{
+  width: 30%;
   position: relative;
   padding: 20px;
   background-color: #eaf4fc;
