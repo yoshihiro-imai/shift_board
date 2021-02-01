@@ -15,8 +15,6 @@ class TasksController < ApplicationController
     @timeline = @projects.where(tasks:{start_time:params[:id]}) .map do |project|
     [project.nickname, intime(project),outtime(project)]
     end
-
-
   end
 
 
@@ -27,7 +25,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
-  
+ 
   end
 
   # POST /tasks

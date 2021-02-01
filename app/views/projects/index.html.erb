@@ -2,7 +2,7 @@
 <table>
   <thead>
     
-  <%= "シフト一覧"%>
+    <div class="title2">シフト投稿</div>
     
   </thead>
 
@@ -11,9 +11,9 @@
       <tr>
         <td><%=project.nickname %></td>  
            <% if user_signed_in? && current_user.id == project.user.id %>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', project %></td>
+        <td><%= link_to '編集', edit_project_path(project) %></td>
+        <td><%= link_to '削除', project, method: :delete, data: { confirm: '削除しますか?' } %></td>
         <%end%>
       </tr>
     <% end %>
