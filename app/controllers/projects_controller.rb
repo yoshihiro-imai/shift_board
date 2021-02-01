@@ -15,7 +15,6 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @protest = Project.joins(:tasks).select('projects.*, tasks.intime,tasks.outtime').where(tasks:{date:1})
   end
 
   # GET /projects/new

@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
   before_action :set_item,only:[:show,:edit,:update,:destroy]
 
   def  index
-    @tweet = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(6)
+    @tweet = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(9)
 
   end
 
