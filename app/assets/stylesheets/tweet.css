@@ -110,9 +110,8 @@
   background-color: #eaf4fc;
   margin-bottom: 2em;
 }
-/* 色付きの半円 */
-.balloon::before{
 
+.balloon::before{
   content: '';
   position: absolute;
   left: 20px;

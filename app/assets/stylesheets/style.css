@@ -159,13 +159,13 @@ body {
 
 #main_image {
 	display: table;
-	width: 100%;
-	height: 482px;
+  width: 100%;
+	height: 80vh;
 	background-size: cover;
 }
 #main_image_inner {
 	width: 100%;
-	height: 482px;
+	height: 100%;
 	position: relative;
   background-image: url("/images/13.png");
 	background-size:cover;
