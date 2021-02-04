@@ -17,3 +17,7 @@ table tr:nth-child(odd){
   text-align: left;
   font-size: 12px;
 }
+
+.timeline{
+  width: 10%;
+}
