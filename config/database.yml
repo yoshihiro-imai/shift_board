@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: shift_board_production
-  username: shift_board
-  password: <%= ENV['SHIFT_BOARD_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
