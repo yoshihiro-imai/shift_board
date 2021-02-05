@@ -27,7 +27,7 @@ http://35.72.129.10/
 ### 実装した機能の説明
  ユーザー登録機能:ユーザーの登録をすることで利用ができます。
  掲示板機能:画像の投稿、テキストの投稿ができて、詳細ではいいねボタンを実装しました。
- 
+
 ![いいね機能](https://user-images.githubusercontent.com/75416155/107020401-2bce2000-67e6-11eb-9a97-078152fd538c.gif)
 
  シフト投稿、閲覧機能:投稿されたシフトをカレンダー上で確認ができます。日にちごとに詳細も確認ができます。
@@ -122,3 +122,4 @@ belongs_to : user
 
 belongs_to : project
 
+<img width="583" alt="shift_boardER図" src="https://user-images.githubusercontent.com/75416155/107021185-30df9f00-67e7-11eb-9c68-f73fded605ac.png">
