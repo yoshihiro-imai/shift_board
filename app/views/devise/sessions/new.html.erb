@@ -6,12 +6,12 @@
       <%= flash[:alert] %>
     </div>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>      <div class="field">
-        <%= f.label "メールアドレス" %><br />
+        <%= f.label "email" %><br />
         <%= f.email_field :email, autofocus: true,class: :form__text %>
       </div>
 
       <div class="field">
-        <%= f.label "パスワード" %><br />
+        <%= f.label "password" %><br />
         <%= f.password_field :password, autocomplete: "off",class: :form__text %>
       </div>
 
