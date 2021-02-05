@@ -1,6 +1,5 @@
 # README
 
-# アプリケーション名
 ![1](https://user-images.githubusercontent.com/75416155/107018114-5cf92100-67e3-11eb-8a9b-9f5c89a99484.png)
 
 
