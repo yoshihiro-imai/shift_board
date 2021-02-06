@@ -10,7 +10,7 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%=project.nickname %></td>  
-           <% if user_signed_in? && current_user.id == project.user.id %>
+           <% if user_signed_in? && current_user.id == project.user.id || current_user.admin? %>
         <td><%= link_to '詳細', project %></td>
         <td><%= link_to '編集', edit_project_path(project) %></td>
         <td><%= link_to '削除', project, method: :delete, data: { confirm: '削除しますか?' } %></td>

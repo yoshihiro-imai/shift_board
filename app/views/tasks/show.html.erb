@@ -5,6 +5,8 @@
   <th>名前</th>
   <th>日にち</th>
   <th>IN-OUT</th>
+    <th></th>
+
   </tr>
 <% @task.each do |task|%>
   <tr>
@@ -12,6 +14,9 @@
 
     <td><%="#{task.start_time.month}月#{task.start_time.day}日"%></td>
     <td><%= "#{task.intime.strftime('%H:%M')}〜#{task.outtime.strftime('%H:%M')}"%></td>
+    <% if current_user.admin? %>
+      <td><%= link_to '編集', edit_project_path(task.project_id) %></td>
+      <%end%>
   </tr>  
  <%end %> 
 </table>
