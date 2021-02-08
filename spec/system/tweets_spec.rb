@@ -68,9 +68,11 @@ end
         fill_in 'パスワード', with: @tweet1.user.password
         find('input[name="commit"]').click
         expect(current_path).to eq(root_path)
-        # ツイート1に「編集」ボタンがあることを確認する
-      
-        
+         # ツイート1に「編集」ボタンがあることを確認する
+         visit tweet_path(@tweet1)
+    expect(
+      all('.show')[0].hover
+    ).to have_link '編集', href: edit_tweet_path(@tweet1)  
         # 編集ページへ遷移する
         visit edit_tweet_path(@tweet1)
         # すでに投稿済みの内容がフォームに入っていることを確認する
