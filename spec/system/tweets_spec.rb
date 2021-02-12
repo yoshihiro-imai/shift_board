@@ -101,4 +101,18 @@ end
       end
     end
     
+    context 'ツイート編集画できない時' do
+    it 'ログインしたユーザーは自分以外が投稿したツイートの編集画面には遷移できない' do
+      # ツイート1を投稿したユーザーでログインする
+      basic_pass root_path
+      visit new_user_session_path
+      fill_in 'メールアドレス', with:@tweet1.user.email
+      fill_in 'パスワード', with: @tweet1.user.password
+      find('input[name="commit"]').click
+      visit tweet_path(@tweet2)
+      expect(
+        all('.show')[0].hover
+      ).to have_no_link '編集', href: edit_tweet_path(@tweet2)
+    end
+  end
 end
