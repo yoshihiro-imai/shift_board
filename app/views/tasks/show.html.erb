@@ -22,3 +22,49 @@
 </table>
  
 <%=timeline @timeline,colors: ["#2ca9e1", "#f39800"]%>
+
+
+<%# 時給計算
+X,Y,Z = gets.split.map(&:to_i) ///時給(X、Ｙ、Z )円
+N = gets.to_i ///働いた人数
+
+total = [] ///合計金額
+
+N.times do 
+
+in_time,out_time = gets.split.map(&:to_i) ///入り時間、終了時間
+
+work = out_time - in_time
+z_count = 0
+y_count = 0
+x_count = 0
+work_time = 0
+work_time += in_time
+
+work.times do 
+ 
+ work_time   += 1
+
+if  work_time <=  9 || work_time >= 23
+    z_count += 1
+elsif work_time >= 10 && work_time <= 17
+    x_count += 1
+
+elsif work_time >= 18 && work_time <= 22
+    y_count += 1
+end
+
+if out_time == work_time
+
+total << z_count * Z
+total << x_count * X
+total << y_count * Y
+work_time = 0
+end
+
+end
+end
+
+puts total.sum  
+
+人件費計算
